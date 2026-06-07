@@ -1,0 +1,283 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+body{
+  background-color: rgb(246, 246, 253);
+  animation: fadein 2s ease-out;
+}
+@keyframes fadein {
+  from{
+    opacity: 0;
+    transform: translateY(-20px)
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top:0;
+  position: sticky;
+  z-index: 100;
+  background-color: rgb(255, 255, 255);
+}
+nav img{
+  width:6rem;
+}
+nav div{
+  display: flex;
+  align-items: center;
+  margin-left:2rem
+}
+
+nav h3{
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+nav button{
+  margin-right: 5rem;
+  padding:0.7rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: rgb(0, 0, 255);
+  color:white;
+  border-radius:5px;
+  border-style: none;
+  transition: all 0.4s ease;
+}
+nav button:hover{
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.507);
+  transform: translateX(-6px);
+  cursor: pointer;
+}
+nav button:active{
+  background-color: rgb(68, 68, 255);
+}
+#men{
+  width:30px;
+  display: none;
+}
+ul{
+  display: flex;
+  gap:2rem;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color:black;
+  font-weight: 600;
+  font-size: 1rem;
+  position: relative;
+}
+a::after{
+    content: '';
+    position: absolute;
+    left:0;
+    height: 2px;
+    width:0;
+    bottom:-5px;
+    background: blue;
+    transition: width 0.4s ease-out;
+}
+a:hover{
+    color:blue;
+}
+a:hover::after{
+    width:100%;
+}
+@media (max-width:768px) {
+      ul.show{
+    display:flex;
+  }
+   ul {
+    display: none;
+    flex-direction: column;
+    padding:1rem;
+    /* position: fixed; */
+    left:0;
+    right:-100%;
+    width:70%;
+    transition: right 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+  }
+  #men{
+    display:flex;
+    width:30px;
+    position: absolute;
+    right:20px;
+    top:40px;
+  }
+  #men:hover{
+    cursor: pointer;
+  }
+    nav div{
+    margin-left: 0;
+  }
+  nav img{
+    width: 4rem;
+  }
+    nav {
+    flex-direction: row;
+    align-items:center;
+    padding: 0.4rem;
+    position: relative;
+  }
+  nav h3{
+    font-size: 1rem;
+  }
+
+  nav button{
+    display:none;
+  }
+
+ 
+  nav button {
+    margin-right: 0;
+    width: 100%;
+  }
+}
+@media (max-width:1024px) {
+  nav div{
+    margin-left: 0;
+  }
+  nav{
+    padding:2rem 3rem;
+  }
+  nav button{
+    display: none;
+  }
+  nav img{
+    width: 4rem;
+  }
+}
+.about{
+  display: flex;
+  gap:3rem;
+  margin:2rem 4rem;
+}
+
+.about img{
+  width:45%;
+  border-radius:5px;
+  margin-top: 3rem;
+  height: 20rem;
+}
+
+.tag h2{
+  color:blue;
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 1.4;
+}
+.tag p{
+  color:black;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+.aims{
+  margin-top: 3rem;
+  display: flex;
+  gap:3rem;
+  /* align-items: center; */
+}
+@media (max-width:768px) {
+  .about{
+    flex-direction: column;
+    margin:1rem 1rem;
+  }
+  .about img{
+    width:100%;
+    height: auto;
+    margin-top:10px;
+  }
+  .aims{
+    flex-direction: column;
+  }
+}
+@media (max-width:1024px) {
+  .about{
+    flex-direction: column;
+    margin:1rem 1rem;
+  }
+  nav button{
+    display: none;
+  }
+  .about img{
+    width:100%;
+    height: auto;
+    margin-top:10px;
+  }
+  .aims{
+    flex-direction: column;
+  }
+}
+.aims-items{
+  background: white;
+  padding:1rem;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.26);
+  transition: all 1.2s ease;
+  flex-wrap: wrap;
+}
+.aims-items h2{
+  color:blue;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.aims-items p{
+  font-weight: 600;
+  line-height: 1.3;
+  font-size: 1.1rem;
+}
+.aims-items:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.aims-items:active{
+    transform: translateY(-10px);
+}
+.faq{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+.faq  img{
+  width:7rem;
+}
+.ffaq{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(20px);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.507);
+  margin-top:3rem;
+  background-color:rgb(168, 158, 255);
+  color:rgb(0, 0, 0);
+  
+}
+.ffaq p{
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+@media (max-width:768px) {
+  .ffaq{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .ffaq p{
+    font-size: 0.9rem;
+  }
+
+}
